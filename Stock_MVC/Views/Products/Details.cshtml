@@ -37,6 +37,12 @@
     </dl>
 </div>
 <div>
-    @Html.ActionLink("Edit", "Edit", new { id = Model.Id }) |
-    <a asp-action="Index">Back to List</a>
+    <a asp-controller="Products" asp-action="Edit" asp-route-id="@Model.Id" class="btn btn-success" style="width: 150px;">
+        <i class="fa fa-pencil" style="margin-right:10px;"></i>
+        Edit
+    </a>
+    <a asp-controller="Products" asp-action="Index" class="btn btn-primary" style="width: 150px;">
+        <i class="fa fa-arrow-left" style="margin-right:10px;"></i>
+        Back to List
+    </a>
 </div>

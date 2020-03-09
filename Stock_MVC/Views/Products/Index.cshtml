@@ -4,24 +4,26 @@
     ViewData["Title"] = "Index";
 }
 
-<h2>Index</h2>
-
+    <div style="margin-top: 20px;"></div>
 <p>
-    <a asp-action="Create">Create New</a>
+    <a asp-controller="Products" asp-action="Create"  class="btn btn-success" style="width: 150px;">
+        <i class="fa fa-plus" style="margin-right:5px;"></i>
+        Add New Item
+    </a>
 </p>
-<table class="table">
-    <thead>
+<table class="table table-striped">
+    <thead class="table-dark" style="background-color: #222; color:#fff;">
         <tr>
-                <th>
+                <th style="text-align: center;">
                     @Html.DisplayNameFor(model => model.Id)
                 </th>
-                <th>
+                <th class="col" style="text-align: center;">
                     @Html.DisplayNameFor(model => model.Description)
                 </th>
-                <th>
+                <th class="col" style="text-align: center;">
                     @Html.DisplayNameFor(model => model.UnitPrice)
                 </th>
-                <th>
+                <th class="col" style="text-align: center;">
                     @Html.DisplayNameFor(model => model.Stock)
                 </th>
             <th></th>
@@ -30,24 +32,33 @@
     <tbody>
 @foreach (var item in Model) {
         <tr>
-            <td>
+            <td style="text-align: center;">
                 @Html.DisplayFor(modelItem => item.Id)
             </td>
-            <td>
+            <td style="text-align: center;">
                 @Html.DisplayFor(modelItem => item.Description)
             </td>
-            <td>
+            <td style="text-align: center;">
                 @Html.DisplayFor(modelItem => item.UnitPrice)
             </td>
-            <td>
+            <td style="text-align: center;">
                 @Html.DisplayFor(modelItem => item.Stock)
             </td>
-            <td>
-                @Html.ActionLink("Edit", "Edit", new {  id = item.Id }) |
-                @Html.ActionLink("Details", "Details", new { id = item.Id }) |
-                @Html.ActionLink("Delete", "Delete", new { id = item.Id })
+            <td style="text-align: center;">
+                <a asp-controller="Products" asp-action="Edit" asp-route-id="@item.Id" class="btn btn-success" style="width: 100px;">
+                    <i class="fa fa-pencil" style="margin-right:10px;"></i>
+                    Edit
+                </a>
+                <a asp-controller="Products" asp-action="Details" asp-route-id="@item.Id" class="btn btn-primary bttn" style="width: 100px;">
+                    <i class="fa fa-info-circle" style="margin-right:10px;"></i>
+                    Details
+                </a>
+                <a asp-controller="Products" asp-action="Delete" asp-route-id="@item.Id" class="btn btn-danger bttn" style="width: 100px;">
+                    <i class="fa fa-trash" style="margin-right:10px;"></i>
+                    Delete
+                </a>
             </td>
         </tr>
 }
     </tbody>
-</table>
+</table>  

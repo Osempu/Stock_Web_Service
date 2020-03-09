@@ -38,7 +38,10 @@
     </dl>
     
     <form asp-action="Delete">
-        <input type="submit" value="Delete" class="btn btn-default" /> |
-        <a asp-action="Index">Back to List</a>
+        <input type="submit" value="Delete" class="btn btn-danger" style="width: 150px; "/> 
+        <a asp-controller="Products" asp-action="Index" class="btn btn-primary" style="width: 150px;">
+            <i class="fa fa-left-arrow" style="margin-right:10px;"></i>
+            Back To List
+        </a>
     </form>
 </div>
